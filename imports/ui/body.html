@@ -1,0 +1,53 @@
+<body>
+<div class="container">
+<header>
+  <div class="goals">
+    <h1>Worksheet List ({{incompleteCount}})</h1>
+    <!--<h1>{{>goal}}</h1>-->
+    <label class="hide-completed">
+      <input type="checkbox" />
+        Hide Completed Tasks
+    </label>
+    {{> loginButtons}}
+   
+    {{#if currentUser}}
+
+    <form class="new-goal">
+      <input type ="text" name="goal" placeholder="Type your goals"/>
+    </form>
+
+    <form class="new-task">           
+      <input type="text" name="text" placeholder="Type to add new tasks"/>           
+    </form>
+
+    {{/if}}
+	  
+	<!-- <template name="goal">
+	 {{#if isempty}}
+		 <h1>It is null</h1>
+		 {{else}}
+		 
+		 
+	  </template>-->
+	  
+	  
+	  
+	  
+<!--<form class="new-task">
+<input type="text" name="text" placeholder="Type to add new tasks" />
+</form>-->
+  </div>
+</header>
+
+
+<ul>
+{{#each tasks}}
+{{> task}}
+{{/each}}
+</ul>
+</div>
+</body>
+
+<!--<template name="task">
+<li>{{text}}</li>
+</template>-->
